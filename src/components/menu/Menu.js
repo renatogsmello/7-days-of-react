@@ -1,4 +1,5 @@
-import logo from "../images/logo.png"
+import Header from "./styled.jsx"
+import logo from "../../images/logo.png"
 
 const menuItems = [
 	{ item: "Como fazer", link: "como-fazer" },
@@ -10,7 +11,7 @@ const menuItems = [
 
 export default function Menu() {
 	return (
-		<header className="w-[75rem] mx-auto pt-3 flex items-baseline justify-between">
+		<Header>
 			<img src={logo} className="App-logo" alt="logo" />
 			<ul className="flex">
 				{menuItems.map((i, index, menuItems) => {
@@ -26,6 +27,6 @@ export default function Menu() {
 					)
 				})}
 			</ul>
-		</header>
+		</Header>
 	)
 }

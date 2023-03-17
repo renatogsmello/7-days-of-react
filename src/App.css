@@ -1,3 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat";
+	list-style-type: none;
+}
+a {
+	all: unset;
+	cursor: pointer;
+}
+
+button {
+	all: unset;
+}
+
 @font-face {
 	font-family: Elsie_Swash_Caps_black;
 	src: url("./fonts/Elsie_Swash_Caps/ElsieSwashCaps-Black.ttf");
@@ -9,27 +24,4 @@
 
 .elsie-black {
 	font-family: Elsie_Swash_Caps_black;
-}
-
-.App {
-	font-family: "Montserrat";
-}
-#yellow-vector {
-	position: absolute;
-	left: 100px;
-	top: -200px;
-	transform: rotate(-26.54deg);
-}
-
-.mask {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 1000px;
-	height: 1000px;
-	overflow: hidden;
-}
-
-header ul {
-	font-family: "Montserrat";
 }
