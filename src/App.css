@@ -9,10 +9,6 @@ a {
 	cursor: pointer;
 }
 
-button {
-	all: unset;
-}
-
 @font-face {
 	font-family: Elsie_Swash_Caps_black;
 	src: url("./fonts/Elsie_Swash_Caps/ElsieSwashCaps-Black.ttf");

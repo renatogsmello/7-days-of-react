@@ -11,6 +11,10 @@ Criar componentes do menu e da seção hero
 
 Colocar o CSS em Styled Components
 
+### Dia 3
+
+Fazer o bloqueio e desbloqueio do botão de enviar email a partir da validação do campo email e mostrar o valor na tela
+
 ## Available Scripts
 
 In the project directory, you can run:

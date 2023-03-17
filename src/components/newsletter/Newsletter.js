@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react"
 import mail from "../../images/mail.png"
-import { SpanTitle, SpanSubTitle, Paragraph, InputContainer, IconContainer, Input, ButtonContainer } from "./styled.jsx"
+import { SpanTitle, SpanSubTitle, Paragraph, InputContainer, IconContainer, Input, ButtonContainer, Button } from "./styled.jsx"
 
 export default function Newsletter() {
+	const [isDisabled, setIsDisabled] = useState(true)
+	const [email, setEmail] = useState("")
+
 	return (
 		<>
 			<SpanTitle>Sua casa com as</SpanTitle>
@@ -17,9 +21,17 @@ export default function Newsletter() {
 					<IconContainer>
 						<img src={mail} />
 					</IconContainer>
-					<Input />
+					<Input
+						onChange={(e) => {
+							setIsDisabled(!e.target.validity.valid)
+							setEmail(e.target.value)
+						}}
+					/>
+
 					<ButtonContainer>
-						<button type="button">Assinar newsletter</button>
+						<Button disabled={isDisabled} onClick={() => alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)}>
+							Assinar newsletter
+						</Button>
 					</ButtonContainer>
 				</div>
 			</InputContainer>

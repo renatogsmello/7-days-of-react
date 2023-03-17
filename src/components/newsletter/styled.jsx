@@ -37,7 +37,7 @@ export const IconContainer = styled.div`
 	align-items: center;
 	padding-left: 0.75rem;
 `
-export const Input = styled.input.attrs({ type: "text", placeholder: "Insira seu e-mail" })`
+export const Input = styled.input.attrs({ type: "email", placeholder: "Insira seu e-mail" })`
 	height: 4rem;
 	width: 100%;
 	border: none;
@@ -62,15 +62,17 @@ export const ButtonContainer = styled.div`
 		border: none;
 		border-top-right-radius: 0.375rem;
 		border-bottom-right-radius: 0.375rem;
-		background-color: #ffcb47;
 		box-shadow: 0px 32px 36px 0px rgb(255 216 118 / 20%);
 		display: flex;
 		align-items: center;
 		padding-right: 1rem;
 		padding-left: 1rem;
-		color: white;
 		cursor: pointer;
 		white-space: nowrap;
 		font-size: 1rem;
 	}
+`
+export const Button = styled.button.attrs({ type: "submit" })`
+	background-color: ${(props) => (props.disabled ? "#ffcb4766" : "#ffcb47")};
+	color: ${(props) => (props.disabled ? "#666666" : "#ffffff")};
 `
