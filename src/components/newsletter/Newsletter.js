@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import mail from "../../images/mail.png"
 import { SpanTitle, SpanSubTitle, Paragraph, InputContainer, IconContainer, Input, ButtonContainer, Button } from "./styled.jsx"
 
 export default function Newsletter() {
 	const [isDisabled, setIsDisabled] = useState(true)
 	const [email, setEmail] = useState("")
+
+	const sendEmail = () => {
+		let name = email.replace(/\@.*$/, "")
+		fetch(`http://localhost:3001/send-email?sender=${email}&name=${name}`).catch((err) => console.log(err))
+	}
 
 	return (
 		<>
@@ -29,7 +34,7 @@ export default function Newsletter() {
 					/>
 
 					<ButtonContainer>
-						<Button disabled={isDisabled} onClick={() => alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)}>
+						<Button disabled={isDisabled} onClick={() => sendEmail()}>
 							Assinar newsletter
 						</Button>
 					</ButtonContainer>

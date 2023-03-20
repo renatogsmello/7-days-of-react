@@ -15,6 +15,10 @@ Colocar o CSS em Styled Components
 
 Fazer o bloqueio e desbloqueio do botão de enviar email a partir da validação do campo email e mostrar o valor na tela
 
+### Dia 4
+
+Criação de servidor node para fazer o envio do email da newsletter
+
 ## Available Scripts
 
 In the project directory, you can run:
