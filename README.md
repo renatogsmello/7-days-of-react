@@ -19,6 +19,10 @@ Fazer o bloqueio e desbloqueio do botão de enviar email a partir da validação
 
 Criação de servidor node para fazer o envio do email da newsletter
 
+### Dia 5
+
+Criação de servidor node para disponibilizar o arquivo JSON com o estoque das plantas, fazer o fetch desses dados no front end e filtra-los segundo a regra de negócios.
+
 ## Available Scripts
 
 In the project directory, you can run:

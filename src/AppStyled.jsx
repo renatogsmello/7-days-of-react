@@ -16,28 +16,28 @@ export const YellowVector = styled.div`
 	}
 `
 
-export const BackgroundImages = styled.div`
-	position: absolute;
-	left: 0;
-	right: 0;
-	z-index: -10;
+// export const BackgroundImages = styled.div`
+// 	position: absolute;
+// 	left: 0;
+// 	right: 0;
+// 	z-index: -10;
 
-	img {
-		width: 100%;
-	}
-`
+// 	img {
+// 		width: 100%;
+// 	}
+// `
 
 export const ContainerHero = styled.div`
 	margin-right: auto;
 	margin-left: auto;
 	width: 75rem;
-	margin-top: 10rem;
+	position: relative;
 	display: flex;
 
 	img#hero-image {
 		position: absolute;
-		top: 0;
-		right: 20rem;
+		top: -50px;
+		right: 2rem;
 		z-index: -10;
 	}
 `
@@ -46,6 +46,7 @@ export const GridHero = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 1rem;
+	margin-top: 10rem;
 `
 
 export const GridLines = styled.div`

@@ -1,42 +1,39 @@
-import { BackgroundImages, VerticalLine, GridLines, YellowVector, ContainerHero, GridHero } from "./AppStyled"
+import { VerticalLine, GridLines, YellowVector, ContainerHero, GridHero } from "./AppStyled"
 import fundo1 from "./images/image_1.png"
-import fundo2 from "./images/image_2.png"
 import heroImage from "./images/imagem-hero_1.png"
 import yellowVector from "./images/Vector.png"
 import "./App.css"
 import Menu from "./components/menu/Menu"
 import Newsletter from "./components/newsletter/Newsletter"
+import HowToGet from "./components/howToGet/HowToGet"
+import Deals from "./components/deals/Deals"
 
 function App() {
 	return (
-		<div className="App">
-			<BackgroundImages>
-				<GridLines>
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-					<VerticalLine />
-				</GridLines>
-				<div style={{ display: "flex", flexDirection: "column" }}>
-					<img src={fundo1} alt="fundo 1" />
-					<img src={fundo2} alt="fundo 2" />
-				</div>
-			</BackgroundImages>
+		<div className="App" style={{ position: "relative", paddingBottom: "10rem" }}>
+			<GridLines>
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+				<VerticalLine />
+			</GridLines>
+			<div style={{ backgroundRepeat: "repeat-y", backgroundImage: `url(${fundo1})`, height: "100%" }}></div>
+
 			<YellowVector>
 				<img src={yellowVector} alt="Yellow Vector" />
 			</YellowVector>
@@ -47,6 +44,8 @@ function App() {
 				</GridHero>
 				<img id="hero-image" src={heroImage} alt="Hero Image" />
 			</ContainerHero>
+			<HowToGet />
+			<Deals />
 		</div>
 	)
 }
