@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import DealsCard from "./Card"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
+import Filters from "./Filters"
 
 const DealsContainer = styled.div`
 	margin-right: auto;
@@ -40,6 +41,7 @@ const CardsGrid = styled.div`
 
 export default function Deals() {
 	let [plants, setPlants] = useState([])
+	let [pricesData, setPricesData] = useState()
 
 	useEffect(() => {
 		fetch("http://localhost:4001/plants")
@@ -47,17 +49,63 @@ export default function Deals() {
 				return res.json()
 			})
 			.then((data) => {
-				const available = data.filter((d) => d.ordem > 0).slice(0, 6)
+				const available = data.filter((d) => d.ordem > 0)
+				available.sort((a, b) => a.preco - b.preco)
 				setPlants(available)
 			})
 	}, [])
 
+	const sortProducts = (ordem) => {
+		switch (ordem) {
+			case "priceMin":
+				plants.sort((a, b) => a.preco - b.preco)
+				break
+
+			case "priceMax":
+				plants.sort((a, b) => b.preco - a.preco)
+				break
+
+			case "a-z":
+				plants.sort((a, b) => (a.name > b.name) - (a.name < b.name))
+				break
+
+			case "z-a":
+				plants.sort((a, b) => (b.name > a.name) - (b.name < a.name))
+				break
+
+			default:
+				plants.sort((a, b) => a.preco - b.preco)
+				break
+		}
+		setPlants([...plants])
+	}
+
+	const getPricesData = (val) => {
+		setPricesData(val)
+	}
+
+	const filteredItems = useMemo(() => {
+		return plants.filter((plant) => {
+			if (pricesData.min == "" && pricesData.max == "") {
+				return plant
+			}
+			if (pricesData.min == "") {
+				return plant.preco < pricesData.max
+			}
+			if (pricesData.max == "") {
+				return plant.preco > pricesData.min
+			}
+			return plant.preco > pricesData.min && plant.preco < pricesData.max
+		})
+	})
+
 	return (
 		<DealsContainer>
-			<Intro>Conheça nossas</Intro>
-			<Title>ofertas</Title>
+			<Intro>Nossas</Intro>
+			<Title> Plantas</Title>
+			<Filters sort={sortProducts} getData={getPricesData} />
 			<CardsGrid>
-				{plants.map((plant) => {
+				{filteredItems.map((plant) => {
 					return <DealsCard key={plant.name} url={plant.img} name={plant.name} price={plant.preco} />
 				})}
 			</CardsGrid>

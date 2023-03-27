@@ -23,9 +23,21 @@ Criação de servidor node para fazer o envio do email da newsletter
 
 Criação de servidor node para disponibilizar o arquivo JSON com o estoque das plantas, fazer o fetch desses dados no front end e filtra-los segundo a regra de negócios.
 
+### Dia 6
+
+Criação de filtro de ordenação por preço crescente ou decrescente, A-Z ou Z-A e filtro de valor minimo e máximo.
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run api`
+
+Sobe a API das plantas
+
+### `npm run mail`
+
+Sobe o API de email
 
 ### `npm start`
 

@@ -18,7 +18,8 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"server": "nodemon ./src/api/server.js"
+		"mail": "nodemon ./src/api/server.js",
+		"api": "nodemon ./src/api/plants/plantsServer.js"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -37,5 +38,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"webpack-node-externals": "^3.0.0"
 	}
 }
