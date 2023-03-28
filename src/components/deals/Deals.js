@@ -44,7 +44,7 @@ export default function Deals() {
 	let [pricesData, setPricesData] = useState()
 
 	useEffect(() => {
-		fetch("http://localhost:4001/plants")
+		fetch("http://https://7-days-of-react-api.vercel.app/api/plants")
 			.then((res) => {
 				return res.json()
 			})

@@ -20,15 +20,6 @@ fs.readFile(path.join(__dirname, "./plants.json"), "utf-8", (err, data) => {
 	}
 })
 
-// http.createServer((req, res) => {
-// 	if (req.url === "/plants") {
-// 		res.end(JSON.stringify(products))
-// 	}
-// }).listen(4001, () => console.log("rodando na porta 4001"))
-// http.get("/plants", (req, res) => {
-// 	return res.json(products)
-// })
-
 app.get("/plants", (req, res) => {
 	return res.json(products)
 })

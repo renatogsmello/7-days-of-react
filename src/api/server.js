@@ -11,29 +11,6 @@ sgMail.setApiKey(apiKey)
 
 app.use(cors())
 
-// http.createServer((req, res) => {
-// 	if (req.url === "/send-email") {
-// 		console.log("req query", req.query)
-// 		const { sender, name } = req.query
-// 		console.log("email e name", sender, name)
-
-// 		const msg = {
-// 			to: sender,
-// 			from: "mello-renato@hotmail.com",
-// 			subject: "Bem vindo a Casa Verde Newsletter",
-// 			text: `
-// 		Olá, ${name}.
-// 		Boas-vindas à Casa Verde! Você se cadastrou em nossa newsletter e vai começar a receber e-mails com as novidades de nossa loja e dicas de como cuidar de suas plantas.
-// 		Até logo!`,
-// 		}
-
-// 		sgMail
-// 			.send(msg)
-// 			.then(() => console.log("e-mail enviado com sucesso"))
-// 			.catch((error) => console.log(error))
-// 	}
-// }).listen(3001, () => console.log("rodando na porta 3001"))
-
 app.listen(3001, () => console.log("rodando na porta 3001"))
 
 app.get("/send-email", (req, res) => {
