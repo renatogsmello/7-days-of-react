@@ -8,7 +8,7 @@ export default function Newsletter() {
 
 	const sendEmail = () => {
 		let name = email.replace(/\@.*$/, "")
-		fetch(`http://localhost:3001/send-email?sender=${email}&name=${name}`).catch((err) => console.log(err))
+		fetch(`https://7-days-of-react-api.vercel.app/api/send-email?sender=${email}&name=${name}`).catch((err) => console.log(err))
 	}
 
 	return (
